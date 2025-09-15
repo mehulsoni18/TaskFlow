@@ -1,34 +1,35 @@
-import React, { useMemo, useState } from 'react';
-import { CT_CLASSES, SORT_OPTIONS } from '../assets/dummy';
-import { CheckCircle2, Filter } from 'lucide-react';
-import { useOutletContext } from 'react-router-dom';
-import TaskItem from '../components/TaskItem'; // ✅ Make sure this path is correct!
+import React, { useMemo, useState } from "react";
+import { CT_CLASSES, SORT_OPTIONS } from "../assets/dummy";
+import { CheckCircle2, Filter } from "lucide-react";
+import { useOutletContext } from "react-router-dom";
+import TaskItem from "../components/TaskItem"; // ✅ Make sure this path is correct!
 
 const CompletePage = () => {
   const { tasks, refreshTasks } = useOutletContext();
-  const [sortBy, setSortBy] = useState('newest');
+  const [sortBy, setSortBy] = useState("newest");
   const [selectedTask, setSelectedTask] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
   const sortCompletedTasks = useMemo(() => {
     return tasks
-      .filter(task =>
-        [true, 1, 'yes', 'true'].includes(
-          typeof task.completed === 'string'
+      .filter((task) =>
+        [true, 1, "yes", "true"].includes(
+          typeof task.completed === "string"
             ? task.completed.toLowerCase()
             : task.completed
         )
       )
       .sort((a, b) => {
         switch (sortBy) {
-          case 'newest':
+          case "newest":
             return new Date(b.createdAt) - new Date(a.createdAt); // ✅ Fix: "createdAt", not "createAt"
-          case 'oldest':
+          case "oldest":
             return new Date(a.createdAt) - new Date(b.createdAt); // ✅ Fix: a before b
-          case 'priority': {
+          case "priority": {
             const order = { high: 3, medium: 2, low: 1 };
             return (
-              order[b.priority?.toLowerCase()] - order[a.priority?.toLowerCase()]
+              order[b.priority?.toLowerCase()] -
+              order[a.priority?.toLowerCase()]
             );
           }
           default:
@@ -47,7 +48,7 @@ const CompletePage = () => {
           </h1>
           <p className={CT_CLASSES.subtitle}>
             {sortCompletedTasks.length} task
-            {sortCompletedTasks.length !== 1 && 's'} marked as completed
+            {sortCompletedTasks.length !== 1 && "s"} marked as completed
           </p>
         </div>
 
@@ -80,7 +81,7 @@ const CompletePage = () => {
                     sortBy === opt.id
                       ? CT_CLASSES.btnActive
                       : CT_CLASSES.btnInactive,
-                  ].join(' ')}
+                  ].join(" ")}
                 >
                   {opt.icon}
                   {opt.label}
