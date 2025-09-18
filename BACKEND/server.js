@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 // FIX: Add CORS middleware here.
 // This allows your frontend (http://localhost:5173) to make requests to this backend.
 app.use(cors({
-    origin: 'http://localhost:5173', // IMPORTANT: Specify the exact origin of your frontend
+    origin: ['http://localhost:5173', "https://taskflow-1-frontend.onrender.com"],// IMPORTANT: Specify the exact origin of your frontend
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow common HTTP methods
     allowedHeaders: ['Content-Type', 'Authorization'], // Allow common headers
 }));
