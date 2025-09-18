@@ -2,8 +2,9 @@ import React, { useMemo, useState, useCallback } from "react";
 import { layoutClasses, SORT_OPTIONS } from "../assets/dummy";
 import { Filter, ListChecks, Plus, Clock } from "lucide-react";
 import { useOutletContext } from "react-router-dom";
-import TaskItem from "../components/taskItem";
+
 import TaskModal from "../components/TaskModal";
+import TaskItem from "../components/TaskItem";
 
 const PendingPage = () => {
   const { tasks = [], refreshTasks } = useOutletContext();
