@@ -25,6 +25,8 @@ import TaskItem from "../components/taskItem";
 import axios from "axios";
 import TaskModal from "../components/TaskModal";
 
+const API_BASE = "https://taskflow-vbfj.onrender.com/api/tasks"
+
 const Dashboard = () => {
   // This is the correct place to call hooks
   const { tasks, refreshTasks } = useOutletContext();

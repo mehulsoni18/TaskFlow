@@ -17,7 +17,7 @@ const Layout = ({ onLogout, user }) => {
     try {
       const token = localStorage.getItem('token');
       if (!token) throw new Error("No auth token found");
-      const { data } = await axios.get('http://localhost:4000/api/tasks/gp', {
+      const { data } = await axios.get('https://taskflow-vbfj.onrender.com/api/tasks/gp', {
         headers: { Authorization: `Bearer ${token}` }
       });
 
