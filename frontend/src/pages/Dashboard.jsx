@@ -21,7 +21,7 @@ import {
 } from "../assets/dummy";
 import { Calendar, Filter, HomeIcon, Plus } from "lucide-react";
 import { useOutletContext } from "react-router-dom";
-import TaskItem from "../components/taskItem";
+import TaskItem from "../components/TaskItem";
 import axios from "axios";
 import TaskModal from "../components/TaskModal";
 
