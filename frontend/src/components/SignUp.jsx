@@ -3,7 +3,7 @@ import { UserPlus } from 'lucide-react'; // Removed 'Icon' as it was causing a p
 import { BUTTONCLASSES, FIELDS, Inputwrapper, MESSAGE_ERROR, MESSAGE_SUCCESS } from '../assets/dummy';
 import axios from 'axios';
 
-const API_URL = "http://localhost:https://taskflow-vbfj.onrender.com";
+const API_URL = "https://taskflow-vbfj.onrender.com";
 const INITIAL_FORM = { name: "", email: "", password: "" };
 
 // FIX: Destructure 'onSwitchMode' from the props object
