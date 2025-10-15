@@ -80,6 +80,8 @@ const Sidebar = ({ user, tasks }) => {
 
           {renderMenuItems()}
 
+          {/* This entire div block for the "Pro Tip" was removed: */}
+          {/*
           <div className="mt-auto pt-6 lg:block hidden">
             <div className={TIP_CARD.container}>
               <div className="flex items-center gap-2">
@@ -103,6 +105,7 @@ const Sidebar = ({ user, tasks }) => {
               </div>
             </div>
           </div>
+          */}
         </div>
       </div>
 
